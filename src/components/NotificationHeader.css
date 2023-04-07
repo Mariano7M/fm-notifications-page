@@ -1,0 +1,34 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.header__notifications {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+}
+
+.header__notifications__title {
+	font-size: 20px;
+	font-weight: 800;
+	margin: auto;
+}
+
+.header__notifications__count {
+	background-color: rgb(var(--clr-secondary));
+	color: rgb(var(--clr-white));
+	font-size: 18px;
+	padding: 0 10px;
+	margin: auto;
+	border-radius: 20%;
+	font-weight: 600;
+}
+
+.header__button {
+	border: none;
+	background-color: transparent;
+	color: rgb(var(--clr-dark-grayish-blue));
+}
