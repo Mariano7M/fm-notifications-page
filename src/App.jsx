@@ -1,10 +1,12 @@
+import NotificationList from './components/NotificationsList'
 import Header from './components/NotificationHeader'
 import './App.css'
+import { useState } from 'react'
 
-const newNotifications = [
+const initialNotifications = [
 	{
 		id: '01',
-		profilePicture: '',
+		profilePicture: 'avatar-mark-webber.webp',
 		user: 'Mark Webber',
 		type: 'REACTION_TO_POST',
 		postName: 'My first tournament today!',
@@ -13,7 +15,7 @@ const newNotifications = [
 	},
 	{
 		id: '02',
-		profilePicture: '',
+		profilePicture: 'avatar-angela-gray.webp',
 		user: 'Angela Gray',
 		type: 'NEW_FOLLOWER',
 		date: '5m ago',
@@ -21,16 +23,16 @@ const newNotifications = [
 	},
 	{
 		id: '03',
-		profilePicture: '',
+		profilePicture: 'avatar-jacob-thompson.webp',
 		user: 'Jacob Thompson',
-		type: 'NEW_MEMBER_GROUP',
+		type: 'USER_JOIN_GROUP',
 		groupName: 'Chess Club',
 		date: '1 day ago',
 		isRead: false,
 	},
 	{
 		id: '04',
-		profilePicture: '',
+		profilePicture: 'avatar-rizky-hasanuddin.webp',
 		user: 'Rizky Hasanuddin',
 		type: 'PRIVATE_MESSAGE',
 		message:
@@ -40,16 +42,16 @@ const newNotifications = [
 	},
 	{
 		id: '05',
-		profilePicture: '',
+		profilePicture: 'avatar-kimberly-smith.webp',
 		user: 'Kimberly Smith',
 		type: 'COMMENT_ON_PICTURE',
-		picture: '',
+		picture: 'image-chess.webp',
 		date: '1 week ago',
 		isRead: true,
 	},
 	{
 		id: '06',
-		profilePicture: '',
+		profilePicture: 'avatar-nathan-peterson.webp',
 		user: 'Nathan Peterson',
 		type: 'REACTION_TO_POST',
 		postName: '5 end-game strategies to increase your win rate',
@@ -58,9 +60,9 @@ const newNotifications = [
 	},
 	{
 		id: '07',
-		profilePicture: '',
+		profilePicture: 'avatar-anna-kim.webp',
 		user: 'Anna Kim',
-		type: 'REACTION_TO_POST',
+		type: 'USER_LEFT_GROUP',
 		groupName: 'Chess Club',
 		date: '2 weeks ago',
 		isRead: true,
@@ -68,28 +70,34 @@ const newNotifications = [
 ]
 
 function App() {
+	const [notifications, setNotifications] = useState(initialNotifications)
+	console.log('🚀 ~ file: App.jsx:74 ~ App ~ notifications:', notifications)
+	const newNotificationsCount = notifications.filter(
+		notification => !notification.isRead
+	).length
+
 	function handleMarkAsRead() {
-		console.log(
-			'🚀 ~ file: App.jsx:73 ~ handleMarkAsRead ~ newNotifications.length:',
-			newNotifications.length
-		)
+		setNotifications(currentState => {
+			return currentState.map(notification => {
+				if (!notification.isRead) {
+					return {
+						...notification,
+						isRead: true,
+					}
+				}
+				return notification
+			})
+		})
 	}
 
 	return (
-		<div className='App'>
+		<div className='app'>
 			<Header
-				notificationsCount={newNotifications.length}
+				notificationsCount={newNotificationsCount}
 				handleMarkAsRead={handleMarkAsRead}
 			/>
 			<main>
-				<ul>
-					<li>
-						<p>
-							Mark Webber reacted to your recent post My first tournament today!
-						</p>
-						<p>1m ago</p>
-					</li>
-				</ul>
+				<NotificationList notifications={notifications} />
 			</main>
 		</div>
 	)

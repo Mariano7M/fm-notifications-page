@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,500;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
 
 /*********************************
 Reset css **********************************/
@@ -80,9 +80,9 @@ select {
 }
 
 :root {
-	font-family: 'Josefin Sans', Inter, system-ui, Avenir, Helvetica, Arial,
+	font-family: 'Plus Jakarta Sans', Inter, system-ui, Avenir, Helvetica, Arial,
 		sans-serif;
-	line-height: 1.5;
+	line-height: 1;
 	font-weight: 400;
 
 	--clr-primary: 246, 83, 81;
@@ -96,7 +96,7 @@ select {
 	--clr-dark-grayish-blue: 94, 103, 120;
 	--clr-very-dark-blue: 28, 32, 43;
 
-	background-color: rgb(var(--clr-very-light-grayish-blue));
+	background-color: rgb(var(--clr-white));
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;

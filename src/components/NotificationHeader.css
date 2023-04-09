@@ -32,3 +32,7 @@
 	background-color: transparent;
 	color: rgb(var(--clr-dark-grayish-blue));
 }
+
+.header__button:hover {
+	color: rgb(var(--clr-secondary));
+}
