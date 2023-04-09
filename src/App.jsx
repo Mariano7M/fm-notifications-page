@@ -1,5 +1,6 @@
+import Footer from './components/Footer'
 import NotificationList from './components/NotificationsList'
-import Header from './components/NotificationHeader'
+import NotificationHeader from './components/NotificationHeader'
 import './App.css'
 import { useState } from 'react'
 
@@ -71,7 +72,6 @@ const initialNotifications = [
 
 function App() {
 	const [notifications, setNotifications] = useState(initialNotifications)
-	console.log('🚀 ~ file: App.jsx:74 ~ App ~ notifications:', notifications)
 	const newNotificationsCount = notifications.filter(
 		notification => !notification.isRead
 	).length
@@ -92,13 +92,16 @@ function App() {
 
 	return (
 		<div className='app'>
-			<Header
-				notificationsCount={newNotificationsCount}
-				handleMarkAsRead={handleMarkAsRead}
-			/>
-			<main>
-				<NotificationList notifications={notifications} />
-			</main>
+			<div className='app__notifications'>
+				<NotificationHeader
+					notificationsCount={newNotificationsCount}
+					handleMarkAsRead={handleMarkAsRead}
+				/>
+				<main>
+					<NotificationList notifications={notifications} />
+				</main>
+			</div>
+			<Footer />
 		</div>
 	)
 }

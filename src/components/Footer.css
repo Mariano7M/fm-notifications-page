@@ -1,0 +1,9 @@
+.footer {
+	font-size: 11px;
+	text-align: center;
+}
+
+.footer a {
+	color: rgb(62, 82, 163);
+	text-decoration: none;
+}
