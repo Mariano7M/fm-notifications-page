@@ -15,7 +15,7 @@ export default function NotificationItem({ notificationItem }) {
 			} `}>
 			<img
 				className='notification-item__user-avatar'
-				src={`/images/${notificationItem.profilePicture}`}
+				src={`./images/${notificationItem.profilePicture}`}
 				alt='user avatar'
 			/>
 			<div className='notification-item__content'>
@@ -54,7 +54,7 @@ export default function NotificationItem({ notificationItem }) {
 				{notificationItem.type === NOTIFICATIONS_TYPE.COMMENT_ON_PICTURE && (
 					<img
 						className='notification-item__picture'
-						src={`/images/${notificationItem.picture}`}
+						src={`./images/${notificationItem.picture}`}
 						alt='picture published'
 					/>
 				)}
