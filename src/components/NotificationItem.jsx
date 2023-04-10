@@ -3,11 +3,6 @@ import './NotificationItem.css'
 import { NOTIFICATIONS_TYPE, getNotificationTitle } from '../notificationsType'
 
 export default function NotificationItem({ notificationItem }) {
-	console.log(
-		'🚀 ~ file: NotificationItem.jsx:4 ~ NotificationItem ~ notificationItem:',
-		notificationItem
-	)
-
 	return (
 		<li
 			className={`notification-item ${

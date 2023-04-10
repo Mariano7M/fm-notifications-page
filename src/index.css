@@ -96,8 +96,6 @@ select {
 	--clr-dark-grayish-blue: 94, 103, 120;
 	--clr-very-dark-blue: 28, 32, 43;
 
-	background-color: rgb(var(--clr-white));
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -105,5 +103,21 @@ select {
 	-webkit-text-size-adjust: 100%;
 }
 
+#root {
+	width: 100%;
+	max-width: 1440px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
+	margin: auto;
+	padding-inline: 10px;
+	background-color: rgb(var(--clr-white));
+}
+
 @media (min-width: 456px) {
+	#root {
+		background-color: rgb(var(--clr-light-grayish-blue-1));
+	}
 }

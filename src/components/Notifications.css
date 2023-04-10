@@ -1,0 +1,18 @@
+.notifications {
+	margin-top: 10px;
+	padding: 10px;
+	background-color: rgb(var(--clr-white));
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (min-width: 456px) {
+	.notifications {
+		margin-top: 20px;
+		padding: 25px 20px 0 20px;
+		border-radius: 15px;
+		max-width: 665px;
+		flex-grow: 1;
+	}
+}
